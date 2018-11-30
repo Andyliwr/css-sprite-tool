@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 from flask import Flask
 
@@ -23,14 +24,6 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
-
-    @app.route('/index')
-    def index():
-        return 'Index Page!'
-
     from . import db
     db.init_app(app)
 
@@ -41,7 +34,7 @@ def create_app(test_config=None):
     from . import blog
     app.register_blueprint(blog.bp)
 
-    # 关联端点名称 'index' 和 /, 这样 url_for('index') 或 url_for('blog.index') 都会有效，会生成同样的 / 
+    # 关联端点名称 'index' 和 /, 这样 url_for('index') 或 url_for('blog.index') 都会有效，会生成同样的 /
     app.add_url_rule('/', endpoint='index')
 
     return app
