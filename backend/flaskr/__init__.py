@@ -34,7 +34,14 @@ def create_app(test_config=None):
     from . import db
     db.init_app(app)
 
+    # 注册auth蓝图
     from . import auth
     app.register_blueprint(auth.bp)
+    # 注册 blog蓝图
+    from . import blog
+    app.register_blueprint(blog.bp)
+
+    # 关联端点名称 'index' 和 /, 这样 url_for('index') 或 url_for('blog.index') 都会有效，会生成同样的 / 
+    app.add_url_rule('/', endpoint='index')
 
     return app

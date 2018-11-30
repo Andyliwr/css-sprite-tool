@@ -5,9 +5,7 @@ https://dormousehole.readthedocs.io/en/latest
 ## 运行程序
 
 ```
-export FLASK_APP=flaskr
-export FLASK_ENV=development
-flask run
+export FLASK_APP=flaskr export FLASK_ENV=development flask run
 ```
 
 https://dormousehole.readthedocs.io/en/latest/tutorial/factory.html#id3
