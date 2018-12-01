@@ -9,11 +9,12 @@ instance/
 .coverage
 htmlcov/
 
-dist/
-build/
+backend/dist/
+backend/build/
 *.egg-info/
 
 .vscode/
 backend/venv/
+backend/instance/
 
 .DS_Store
