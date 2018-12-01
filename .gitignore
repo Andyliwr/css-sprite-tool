@@ -15,3 +15,5 @@ build/
 
 .vscode/
 backend/venv/
+
+.DS_Store

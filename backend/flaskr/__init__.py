@@ -27,6 +27,10 @@ def create_app(test_config=None):
     from . import db
     db.init_app(app)
 
+    @app.route('/hello')
+    def hello():
+        return 'Hello, World!'
+
     # 注册auth蓝图
     from . import auth
     app.register_blueprint(auth.bp)

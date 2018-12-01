@@ -1,5 +1,5 @@
-# -*- coding: utf-8 -*-
 import sqlite3
+
 import pytest
 from flaskr.db import get_db
 
